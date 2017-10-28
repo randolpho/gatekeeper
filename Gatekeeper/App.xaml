@@ -1,0 +1,18 @@
+﻿<Application
+    x:Class="Gatekeeper.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:local="using:Gatekeeper"
+    RequestedTheme="Dark">
+    <Application.Resources>
+        <local:ViewModel x:Key="uxViewModel"></local:ViewModel>
+        <Color x:Key="uxBackgroundColor">#FF050505</Color>
+        <Color x:Key="uxTextColor">#FFFFFFFF</Color>
+        <SolidColorBrush x:Key="uxBackgroundBrush" Color="{StaticResource uxBackgroundColor}" />
+        <SolidColorBrush x:Key="uxTextBrush" Color="{StaticResource uxTextColor}" />
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{StaticResource uxTextBrush}" />
+        </Style>
+    </Application.Resources>
+</Application>

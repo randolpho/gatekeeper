@@ -1,0 +1,39 @@
+﻿<Page
+    x:Class="Gatekeeper.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Gatekeeper"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        
+    </Page.Resources>
+    <Grid DataContext="{StaticResource uxViewModel}" Background="{StaticResource uxBackgroundBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <TextBlock HorizontalAlignment="Center">Groups</TextBlock>
+            <ScrollViewer>
+                <ListView ItemsSource="{Binding GroupsQueue}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Height="50" VerticalAlignment="Center">
+                                <TextBlock Text="{Binding GroupNumber}" FontWeight="Bold" />
+                                <TextBlock Text="{Binding GroupSize}" FontStyle="Italic" />
+                                <TextBlock>(</TextBlock>
+                                <TextBlock Text="{Binding WaitTime}" />
+                                <TextBlock>) mins</TextBlock>
+                                <Button Command="{Binding RemoveGroup}">Remove</Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollViewer>
+
+        </StackPanel>
+    </Grid>
+</Page>
